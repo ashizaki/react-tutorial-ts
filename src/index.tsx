@@ -2,8 +2,10 @@ import React, {ReactElement} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+type Value = 'X' | 'O' | null;
+
 type SquareProps = {
-    value: string;
+    value: Value;
     onClick: () => void;
 }
 
@@ -14,7 +16,7 @@ const Square: React.FC<SquareProps> = props => (
 );
 
 type BoardProps = {
-    squares : Array<string>
+    squares : Array<Value>
     onClick: (i: number) => void;
 }
 
@@ -47,7 +49,7 @@ class Board extends React.Component<BoardProps> {
 }
 
 interface HistoryElement {
-    squares: string[];
+    squares: Value[];
 }
 
 type GameState = {
@@ -132,7 +134,7 @@ class Game extends React.Component<any, GameState> {
     }
 }
 
-function calculateWinner(squares: Array<string>) {
+function calculateWinner(squares: Array<Value>) {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],
