@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -9,9 +9,9 @@ type SquareProps = {
     onClick: () => void;
 }
 
-const Square: React.FC<SquareProps> = props => (
-    <button className="square" onClick={props.onClick}>
-        {props.value}
+const Square: React.SFC<SquareProps> = ({ value, onClick }) => (
+    <button className="square" onClick={onClick}>
+        {value}
     </button>
 );
 
