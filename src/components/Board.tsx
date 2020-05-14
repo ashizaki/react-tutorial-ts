@@ -3,7 +3,7 @@ import {Value} from "../domain/entity";
 import Square from "./Square";
 
 type BoardProps = {
-    squares : Array<Value>
+    squares : Array<Value>;
     onClick: (i: number) => void;
 }
 
